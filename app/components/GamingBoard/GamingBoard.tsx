@@ -11,7 +11,6 @@ const GamingBoard = () => {
   const {
     speedVal,
     setSpeedVal,
-    generateVal,
     pointsValue,
     setPointsValue,
     multiplierValue,

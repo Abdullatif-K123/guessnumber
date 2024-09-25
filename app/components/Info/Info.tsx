@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useSelector, UseSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "@/app/store/store";
 import styles from "./info.module.css";
 const Info = () => {

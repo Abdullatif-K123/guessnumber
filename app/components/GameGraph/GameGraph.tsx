@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./game.module.css";
-import { LineChart, Line, XAxis, YAxis } from "recharts";
+import { LineChart, Line, XAxis } from "recharts";
 import CountUp from "react-countup";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/store/store";
