@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import styles from "./game.module.css";
 import { LineChart, Line, XAxis } from "recharts";

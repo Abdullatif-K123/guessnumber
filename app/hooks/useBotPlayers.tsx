@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { random } from "../utils/random";
 import { setUsersRanking } from "../store/gameSlice";
 
-import { RootState } from "../store/store";
 // Define the shape of a player
 
 interface Player {
