@@ -6,6 +6,7 @@ import CurrentRound from "../CurrentPlayRound/CurrentRound";
 import MultiplierToggle from "../Toggle/MultiplierToggle";
 import { useGameLogic } from "@/app/hooks/useGameBoard";
 import Speed from "../SpeedSlider/Speed";
+import { Toaster } from "react-hot-toast";
 const GamingBoard = () => {
   const {
     speedVal,
@@ -39,15 +40,20 @@ const GamingBoard = () => {
         </div>
       </div>
 
-      <button className={styles.btn} onClick={startFunction}>
-        Start
+      <button
+        className={styles.btn}
+        onClick={startFunction}
+        disabled={animationShow}
+      >
+        {animationShow ? "Started!!" : "Start"}
       </button>
 
-      <div className={styles.title}>Current round</div>
+      <div className={styles.title}>📍 Current round</div>
       <CurrentRound autoPlayersValue={autoPlayerValue} />
 
-      <div className={styles.title}>Speed</div>
+      <div className={styles.title}>⏲ Speed</div>
       <Speed speedValue={speedVal} onSpeedChange={setSpeedVal} />
+      <Toaster />
     </div>
   );
 };

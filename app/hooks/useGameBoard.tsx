@@ -33,16 +33,12 @@ export const useGameLogic = () => {
   // Calculate the timeout duration based on speedValue
   // Starting with the default settings
   const startFunction = () => {
-    if (userBalance <= 0) {
+    if (userBalance <= 0 || userBalance <= pointsValue) {
       toast("Opps you don't have enough points to start", {
         duration: 4000,
         style: {},
         className: "",
         icon: "⚠️",
-        ariaProps: {
-          role: "status",
-          "aria-live": "polite",
-        },
       });
       return;
     }
@@ -59,7 +55,11 @@ export const useGameLogic = () => {
   const updateBalance = () => {
     dispatch(animStateVal(false));
     if (generatedValue >= multiplierValue) {
-      dispatch(updateBalanceVal(userBalance + pointsValue * multiplierValue));
+      dispatch(
+        updateBalanceVal(
+          userBalance - pointsValue + pointsValue * multiplierValue
+        )
+      );
     } else {
       dispatch(updateBalanceVal(userBalance - pointsValue));
     }

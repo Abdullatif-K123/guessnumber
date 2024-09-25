@@ -1,0 +1,49 @@
+.container{
+  
+    width: 100%;
+    margin-top: 1rem;
+}
+.title{
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.rankingBox{
+     overflow: hidden;
+     background: #202632;
+     border-radius: 8px;
+     box-shadow: 0 0 20px #0f1012;
+}
+.rankingTable{
+    border-collapse: collapse;
+    background: #191f27;
+    color: #f2f6ff;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    padding-left: 20px;
+}
+.rankingTable tr th:last-child,
+.rankingTable tr td:last-child{
+     text-align: center;
+}
+.rankingTable th{
+    font-size: 10px;
+    background: #15191f;
+    color: #9098a3;
+    font-weight: 500;
+}
+.rankingTable td {
+     padding: 5px 0;
+}
+ 
+.rankingTable tr td:last-child,
+.rankingTable tr th:last-child{
+    padding-right: 20px;
+}
+.rankingTable tr:nth-child(2n){
+    background-color:  #222832;;
+}
+table.rankingTable tbody .myResult{
+     background-color: #3f4657; ;
+}
