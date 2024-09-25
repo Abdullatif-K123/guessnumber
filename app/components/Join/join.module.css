@@ -1,0 +1,67 @@
+.joinMain{
+    width : 20%;
+    height: 55%;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: #202632;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #0f1012;
+    border: 1px solid #323843;
+}
+.title{
+  color: #9da5b5;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.formInput{
+    width: 100%;
+     display: flex;
+     flex-flow: column;
+     align-items: center; 
+}
+.formInput > input{
+    width: 100%;
+    outline: none;
+    padding: 5px 10px;
+    color: #ffffff;
+    background: #15191f;
+    border-radius: 6px;
+    border: 1px solid #323843;
+    height: 40px;
+}
+.formInput > input::placeholder{
+     color: #323843;
+}
+.lableInput{
+     color: #808691;
+     font-size: 10px;
+     text-align: center;
+     margin-bottom: 15px;
+}
+.btn{
+    background: linear-gradient(45deg, #c02e64, #fc5c4a);
+    background-size: 100%;
+    transition: 400ms;
+    padding: 0 1.7em;
+    font-size: 14px;
+    height: 40px;
+    font-weight: 600;
+    border: 0;
+    width: 100%;
+    padding: 5px 10px;
+    margin-top: 5px;
+    transition: 0ms;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.btnDisabled{
+  opacity: 1;
+  color: #cacaca !important;
+  background: #686a6c !important;
+  cursor: auto;
+}

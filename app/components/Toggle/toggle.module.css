@@ -1,0 +1,50 @@
+/* Styling for the toggle the points and the multiplier */
+.container{
+  background: #202632;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #0f1012;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px;
+}
+.title{
+    color: #6f7485;
+    font-size: 12px;
+}
+.toggleController{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.inputToggle{
+    width: calc(100% - 58px);
+    font-size: 15px;
+    height: 25px;
+    text-align: center;
+    padding: 0 5px;
+    margin: 0 5px;
+
+    -moz-appearance: textfield;
+}
+ 
+.inputToggle::-webkit-outer-spin-button,
+.inputToggle::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.toggleMinusPlus{
+    padding: 3px;
+    min-width: 24px;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid #323843;
+    background: transparent;
+    font-size: 15px;
+    cursor: pointer;
+    color: #a7a7a7;
+}

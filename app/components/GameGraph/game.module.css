@@ -1,0 +1,31 @@
+.container{
+     width: 100%;
+     margin-top: 10px;
+     
+  background: #202632;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #0f1012;
+}
+.graphicBox {
+    position: relative;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  }
+  
+  
+  
+  .result {
+    position: absolute;
+    z-index: 10;
+    top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .graph-box .result.animation-ended {
+    color: #f14e5f;
+  }
+  

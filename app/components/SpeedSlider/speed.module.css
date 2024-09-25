@@ -1,0 +1,27 @@
+.container{
+    width: 100%;
+    background: #202632;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #0f1012;
+    padding: 10px 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 10px;
+    gap: 10px;
+    margin: -5px 3px 0;
+    
+}
+.speed{
+    padding: 0;
+}
+.speedSelect{
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    margin: -5px 3px 0;
+}
+.selected{
+     color: #f14e5f ;
+
+}

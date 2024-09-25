@@ -1,11 +1,11 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #15191f;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #15191f;
     --foreground: #ededed;
   }
 }
@@ -15,6 +15,8 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+ 
 
 body {
   color: var(--foreground);
@@ -29,12 +31,54 @@ body {
   padding: 0;
   margin: 0;
 }
-
+.container{
+   width: 100%;
+   height: 100%;
+}
 a {
   color: inherit;
   text-decoration: none;
 }
+.mainContainer{
+   display: grid;
+   grid-template-columns: 1fr 3fr; 
+   gap: 18px;
+   width: 100%;
+}
+input {
+  width: 100%;
+  outline: none;
+  padding: 5px 10px;
+  color: #ffffff;
+  background: #15191f;
+  border-radius: 6px;
+  border: 1px solid #323843;
+}
 
+input[type="range"]::-moz-range-track {  
+  background-color: #ddd; 
+}
+input[type="range"] {
+  -webkit-appearance: none; /* Remove default styling */
+  width: 100%; /* Full width */
+  height: 8px; /* Height of the track */
+  background: #f14e5f; /* Background color of the track */
+  border-radius: 5px; /* Rounded corners */
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px; /* Width of the thumb */
+  height: 20px; /* Height of the thumb */
+  border-radius: 50%; /* Circular thumb */
+  background: #f14e5f; /* Color of the thumb */
+  cursor: pointer; /* Change cursor on hover */
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: #f14e5f; 
+}
+
+ 
+ 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
