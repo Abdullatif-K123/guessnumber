@@ -7,7 +7,7 @@ import GameGraph from "./components/GameGraph/GameGraph";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
 import Ranking from "./components/Ranking/Ranking";
-import Chat from "./components/Chat/chat";
+import Chat from "./components/Chat/Chats";
 export default function Home() {
   const userName = useSelector((state: RootState) => state.reduxStore.userName);
   return (
