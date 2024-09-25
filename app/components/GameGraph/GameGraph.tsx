@@ -27,11 +27,16 @@ const GameGraph = () => {
     return 8000 / (speedValue || 1);
   };
 
-  const CustomizedDot = (props: any) => {
-    const { cx, cy } = props;
+  // Custom dot component with internal conditional rendering
+  const CustomDotWithCondition = (props) => {
+    const { cx, cy, payload, xValue } = props;
+
+    if (payload.x !== xValue) {
+      return null; // Returning null is fine inside a React component
+    }
+
     return <circle cx={cx} cy={cy} r={12} fill="yellow" />;
   };
-
   return (
     <div className={styles.container} data-testid="info-graph-container">
       <div className={styles.graphicBox}>
@@ -69,12 +74,9 @@ const GameGraph = () => {
             type="monotone"
             dataKey="y"
             stroke="transparent"
-            dot={(props) => {
-              if (props.payload.x === xValue) {
-                return <CustomizedDot {...props} />;
-              }
-              return null;
-            }}
+            dot={(props) => (
+              <CustomDotWithCondition {...props} xValue={xValue} /> // Use the custom dot component
+            )}
             animationDuration={calcSpeed()}
           />
           <XAxis
