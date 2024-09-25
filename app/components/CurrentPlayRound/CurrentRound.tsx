@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./current.module.css";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/store/store";
 interface Player {
   id: number;
   name: string;
@@ -12,6 +14,10 @@ interface CurrentRoundProps {
 }
 
 const CurrentRound: React.FC<CurrentRoundProps> = ({ autoPlayersValue }) => {
+  const generatedVal = useSelector(
+    (state: RootState) => state.reduxStore.generatedValue
+  );
+  const animshow = useSelector((state: RootState) => state.reduxStore.animShow);
   return (
     <div className={styles.container}>
       <table className={styles.table}>
@@ -25,9 +31,39 @@ const CurrentRound: React.FC<CurrentRoundProps> = ({ autoPlayersValue }) => {
         <tbody>
           {autoPlayersValue.map((user, index) => (
             <tr key={user.id} className={index === 0 ? styles.myTable : ""}>
-              <td>{user.name}</td>
-              <td>{user.point === -1 ? "-" : user.point}</td>
-              <td>{user.multiplier === -1 ? "-" : user.multiplier}</td>
+              <td
+                className={`${
+                  generatedVal && user.name && !animshow
+                    ? generatedVal >= user.multiplier
+                      ? styles.winning
+                      : styles.losing
+                    : ""
+                }`}
+              >
+                {user.name}
+              </td>
+              <td
+                className={`${
+                  generatedVal && user.name && !animshow
+                    ? generatedVal >= user.multiplier
+                      ? styles.winning
+                      : styles.losing
+                    : ""
+                }`}
+              >
+                {user.point === -1 ? "-" : user.point}
+              </td>
+              <td
+                className={`${
+                  generatedVal && user.name && !animshow
+                    ? generatedVal >= user.multiplier
+                      ? styles.winning
+                      : styles.losing
+                    : ""
+                }`}
+              >
+                {user.multiplier === -1 ? "-" : user.multiplier}
+              </td>
             </tr>
           ))}
         </tbody>

@@ -38,3 +38,9 @@
 .myTable{
     background-color: #3f4657;
 }
+.winning{
+    color: rgb(7, 250, 7);
+}
+.losing{
+    color: red;
+}

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { random } from "../utils/random";
 import { setUsersRanking } from "../store/gameSlice";
-
+import { UseSelector } from "react-redux";
+import { RootState } from "../store/store";
 // Define the shape of a player
 
 interface Player {
@@ -18,7 +19,9 @@ interface Player {
 export const useAutoPlayers = (pointValue: number, multiplierValue: number) => {
   const dispatch = useDispatch();
   const [autoPlayerValue, setAutoPlayerValue] = useState<Player[]>([]);
-
+  const generateVal = useSelector(
+    (state: RootState) => state.reduxStore.generatedValue
+  );
   useEffect(() => {
     const autoPlayerGuess: Player[] = [];
     for (let i = 0; i < 5; i++) {
@@ -27,7 +30,7 @@ export const useAutoPlayers = (pointValue: number, multiplierValue: number) => {
         name: i === 0 ? "You" : `Bot ${i}`,
         point: -1,
         multiplier: -1,
-        score: 0,
+        score: -1,
       };
       autoPlayerGuess.push(data);
     }
@@ -50,11 +53,11 @@ export const useAutoPlayers = (pointValue: number, multiplierValue: number) => {
 
     //Generating the four guesses
     for (let i = 0; i < 4; i++) {
-      const p = random(1, 900, 0);
-      const m = random(1, 4, 2);
+      const p = random(1, 500, 0);
+      const m = random(1, 10, 2);
       autoPlayersGuess.push({
         id: i + 1,
-        name: `Bot ${i + 1}`,
+        name: `CPU ${i + 1}`,
         point: p,
         multiplier: m,
         score: Math.round(p * m),

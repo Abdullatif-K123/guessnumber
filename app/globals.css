@@ -45,6 +45,12 @@ a {
    gap: 10px;
    width: 100%;
 }
+.mainContainer2{
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px;
+  width: 100%;
+}
 input {
   width: 100%;
   outline: none;

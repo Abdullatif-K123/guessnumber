@@ -7,6 +7,7 @@ import GameGraph from "./components/GameGraph/GameGraph";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
 import Ranking from "./components/Ranking/Ranking";
+import Chat from "./components/Chat/chat";
 export default function Home() {
   const userName = useSelector((state: RootState) => state.reduxStore.userName);
   return (
@@ -22,8 +23,9 @@ export default function Home() {
             <GameGraph />
           </div>
         </div>
-        <div className="mainContainer">
+        <div className="mainContainer2">
           <Ranking />
+          <Chat />
         </div>
       </div>
     </div>

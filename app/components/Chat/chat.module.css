@@ -1,0 +1,36 @@
+.container{
+    background: #202632;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #0f1012;
+    width: 100%;
+  }
+  .messageBox{
+     
+   height: 115px;
+  font-size: 14px;
+  overflow: hidden scroll;
+  }
+  .sendMsg{
+    display: flex;
+    padding: 5px;
+    background: #2f3943;
+  }
+  .sendMsg input{
+    margin-right: 8px;
+  }
+
+  .btn{ 
+    width: 15%;
+border-radius: 6px;
+    background: linear-gradient(45deg, #c02e64, #fc5c4a);
+  background-size: 100%;
+  transition: 400ms;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+  }
+  .inputChat{
+  border-radius: 10px;
+}
