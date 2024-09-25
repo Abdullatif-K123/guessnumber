@@ -1,11 +1,11 @@
 .container{
-    background: #202632;
-    border-radius: 8px;
-    box-shadow: 0 0 20px #0f1012;
+    margin-top: 10px;
     width: 100%;
   }
   .messageBox{
-     
+    background: #202632;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #0f1012;
    height: 115px;
   font-size: 14px;
   overflow: hidden scroll;

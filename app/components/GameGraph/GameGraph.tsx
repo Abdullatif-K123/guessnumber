@@ -5,7 +5,7 @@ import { LineChart, Line, XAxis } from "recharts";
 import CountUp from "react-countup";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/store/store";
-
+import { DotProps } from "recharts"; // Import types from recharts
 const GameGraph = () => {
   const generatedValue = useSelector(
     (state: RootState) => state.reduxStore.generatedValue
@@ -27,16 +27,25 @@ const GameGraph = () => {
     return 8000 / (speedValue || 1);
   };
 
-  // Custom dot component with internal conditional rendering
-  const CustomDotWithCondition = (props) => {
+  // Define a type for the payload that includes the x value
+  interface CustomDotProps extends DotProps {
+    payload: {
+      x: number; // Define x as part of the payload
+    };
+    xValue: number; // Custom prop to compare the x value
+  }
+
+  // Define the custom dot component with proper types
+  const CustomDotWithCondition: React.FC<CustomDotProps> = (props) => {
     const { cx, cy, payload, xValue } = props;
 
     if (payload.x !== xValue) {
-      return null; // Returning null is fine inside a React component
+      return null; // Return null if the condition is not met
     }
 
     return <circle cx={cx} cy={cy} r={12} fill="yellow" />;
   };
+
   return (
     <div className={styles.container} data-testid="info-graph-container">
       <div className={styles.graphicBox}>
